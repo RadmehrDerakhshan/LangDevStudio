@@ -1,0 +1,29 @@
+{
+  "name": "Untitled",
+  "tokens": [
+    {
+      "name": "NUMBER",
+      "pattern": "\\d+(\\.\\d+)?"
+    },
+    {
+      "name": "STRING",
+      "pattern": "\"[^\"]*\""
+    },
+    {
+      "name": "IDENT",
+      "pattern": "[A-Za-z_]\\w*"
+    },
+    {
+      "name": "OP",
+      "pattern": "[=+\\-*/]"
+    }
+  ],
+  "keywords": {
+    "let": "LET",
+    "print": "PRINT"
+  },
+  "funcs": {
+    "let": "name = p.eat('IDENT').value\np.eat('OP')\ne = p.expr()\ndef run(i):\n    i.env[name] = i.val(e)",
+    "print": "e = p.expr()\ndef run(i):\n    i._out(i.val(e))"
+  }
+}
